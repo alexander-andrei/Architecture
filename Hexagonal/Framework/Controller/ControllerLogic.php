@@ -17,8 +17,8 @@ class ControllerLogic implements ControllerInterface
         $this->_view = $view;
     }
 
-    public function view($data)
+    public function view($data, $params)
     {
-        return $this->_view->createPage($data);
+        return $this->_view->createPage($data, $params);
     }
 }
