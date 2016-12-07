@@ -1,0 +1,63 @@
+{
+  "user_persistence":
+  [
+    {
+      "class": "\\Persistence\\Persistence",
+      "constructor": ["user_mapper", "repository"]
+    }
+  ],
+  "user_mapper":
+  [
+    {
+      "class": "\\Persistence\\Mapper\\Mapper",
+      "constructor": [
+        "user",
+        [
+          {
+            "id": "id",
+            "name": "name",
+            "accountNo": "account_no"
+          }
+        ]
+      ]
+    }
+  ],
+  "user":
+  [
+    {
+      "class": "\\Bank\\User\\Entity\\UserEntity"
+    }
+  ],
+  "repository":
+  [
+    {
+      "class": "\\Persistence\\Repository\\Repository",
+      "constructor": ["context", "id"]
+    }
+  ],
+  "context":
+  [
+    {
+      "class": "\\Context\\Mysql\\MysqlEngine"
+    }
+  ],
+  "controller_logic":
+  [
+    {
+      "class": "Framework\\Controller\\ControllerLogic",
+      "constructor": ["base_model", "base_view"]
+    }
+  ],
+  "base_view":
+  [
+    {
+      "class": "Framework\\View\\BaseView"
+    }
+  ],
+  "base_model":
+  [
+    {
+      "class": "Framework\\Model\\BaseModel"
+    }
+  ]
+}
