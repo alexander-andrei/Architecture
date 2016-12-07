@@ -6,6 +6,12 @@ namespace Context\Mysql;
 
 use Context\SqlContext;
 
+/**
+ * Class MysqlEngine
+ * @package Context\Mysql
+ *
+ * USED ONLY AS A MOCK
+ */
 class MysqlEngine implements SqlContext
 {
 

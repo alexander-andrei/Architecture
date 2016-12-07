@@ -10,6 +10,6 @@ define("MAIN_DIR", __DIR__);
 
 $route = new \Framework\Route\Route();
 $route->add('/', 'Presentation\Controllers\User\UserController', 'index');
-$route->add('/test', 'Presentation\Controllers\User\UserController', 'test');
+$route->add('/register', 'Presentation\Controllers\User\UserController', 'register');
 
 $route->start();

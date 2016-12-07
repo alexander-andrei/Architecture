@@ -38,6 +38,12 @@ class Route implements RouteInterface
                 $method = $route->getMethod();
 
                 $instance = new $controller;
+
+                if (isset(parse_url($url)['query']))
+                {
+                    return $instance->$method(parse_url($url)['query']);
+                }
+
                 return $instance->$method();
             }
         }

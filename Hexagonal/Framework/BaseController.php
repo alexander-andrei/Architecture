@@ -13,10 +13,15 @@ class BaseController
         $this->_container = new Container();
     }
 
-    public function view($data, $params)
+    public function view($data, $params = null)
     {
         $logic = $this->_container->get('controller_logic');
 
         return $logic->view($data, $params);
+    }
+
+    public function getService($service)
+    {
+        return $this->_container->get($service);
     }
 }

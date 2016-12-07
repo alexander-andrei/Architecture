@@ -3,21 +3,29 @@
 namespace Presentation\Controllers\User;
 
 
+use Bank\User\Entity\UserEntity;
 use Framework\BaseController;
-use Presentation\Models\User\UserModel;
 
 class UserController extends BaseController
 {
     public function index()
     {
-        $model = new UserModel();
-        $user = $model->get("user_persistence")->find(array("id" => "1"));
+        $user = $this->getService("user_persistence")->find(array("id" => "1"));
 
         return $this->view("user/index", array("user" => $user));
     }
 
-    public function test()
+    public function register($query = null)
     {
-        return $this->view("user/test");
+        parse_str($query, $qParams);
+
+        $user = new UserEntity();
+        $user->setId(1);
+        $user->setName($qParams['name']);
+        $user->setAccountNo($qParams['accountNo']);
+
+        $registerer = $this->getService('user_register');
+
+        $registerer->register($user);
     }
 }

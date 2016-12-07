@@ -59,5 +59,18 @@
     {
       "class": "Framework\\Model\\BaseModel"
     }
+  ],
+  "user_register":
+  [
+    {
+      "class": "Bank\\User\\Logic\\Register",
+      "constructor": ["user_persistence", "user_validator"]
+    }
+  ],
+  "user_validator":
+  [
+    {
+      "class": "Bank\\User\\Logic\\Validator"
+    }
   ]
 }
